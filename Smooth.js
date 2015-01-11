@@ -31,7 +31,8 @@ function Smooth(element){
 		var X = 0,Y=0;
 
 			_this.dom.addEventListener('touchmove', function (e) {
-					e.preventDefault();
+				e.stopPropagation();
+				e.preventDefault();
 					moving = true;
 					if (firstMove) {
 						startX = e.changedTouches[0].clientX;
@@ -93,7 +94,8 @@ function Smooth(element){
 
 		_this.dom.addEventListener('touchstart', function (e) {
 			e.preventDefault();
-	
+			e.stopPropagation();
+
 			startX = e.changedTouches[0].clientX;
 			startY = e.changedTouches[0].clientY;				
 	
@@ -101,6 +103,7 @@ function Smooth(element){
 		}, false);
 	
 		_this.dom.addEventListener('touchend', function (e) {
+			e.stopPropagation();
 			e.preventDefault();
 			
 			moveX = e.changedTouches[0].clientX - startX;
