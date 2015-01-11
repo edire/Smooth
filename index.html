@@ -1,46 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<meta charset="UTF-8">
-	<title>Smooth</title>
-	<style>
-		.dot {
-			width: 30px;
-			height: 30px;
-			background: #ccc;
-			position: absolute;
-			left: 33px;
-			top: 33px;
-		}
-	</style>
+	<title>Smooth.js 一个简单的javascritp touch事件插件</title>
 </head>
 <body>
-	<div class="dot">
-	</div>
+	<h1>
+<a id="user-content-smoothjsjavascript-touch插件" class="anchor" href="#smoothjsjavascript-touch%E6%8F%92%E4%BB%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Smooth.js，javascript touch插件</h1>
 
+<p>插件封装了两个方法，实时滑动事件，和滑动后离开事件 </p>
+<p>Demo<a href="demo.html" target="_blank">http://www.fanmingfei.cn/Smooth/demo.html</a> </p>
 
-	<div class="c">
-	</div>
-	<script src="Smooth.js"></script>
-	<script>
+<h2>
+<a id="user-content-实时滑动事件" class="anchor" href="#%E5%AE%9E%E6%97%B6%E6%BB%91%E5%8A%A8%E4%BA%8B%E4%BB%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>实时滑动事件</h2>
 
-var dom = document.querySelector('.dot');
-	dom.style.left = dom.offsetLeft + 'px';
-	dom.style.top = dom.offsetTop + 'px';
+<pre><code>Smooth(element).move(function(data,event){
 
-Smooth('.dot').move(function(data,e){
-	dom.style.left = parseFloat(dom.style.left) + data.changeX + 'px';
-	dom.style.top = parseFloat(dom.style.top) + data.changeY + 'px';
-},function(e){
+   //todo
+
+},function(event){
+
+   //todo
+
 });
-Smooth('.dot').slide(function(data,e){
+</code></pre>
 
-},20,20);
+<h4>
+<a id="user-content-data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>data</h4>
 
+<p>类型：Object</p>
 
+<p>当手指滑动的时候，返回数据</p>
 
-	</script>
+<pre><code>moveX/Y：从手指按下到当前一次动作滑动的X/Y。changeX/Y：每次触发move事件，X/Y的变化值
 
+event：当前事件的event，返回原生的event对象。
+</code></pre>
+
+<h2>
+<a id="user-content-手指离开时事件" class="anchor" href="#%E6%89%8B%E6%8C%87%E7%A6%BB%E5%BC%80%E6%97%B6%E4%BA%8B%E4%BB%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>手指离开时事件</h2>
+
+<pre><code>Smooth(element).slide(function(data,event){
+
+   //todo
+
+},xMove,yMove);
+</code></pre>
+
+<h4>
+<a id="user-content-xymove" class="anchor" href="#xymove" aria-hidden="true"><span class="octicon octicon-link"></span></a>x/yMove</h4>
+
+<pre><code>类型：string
+
+移动的最小X/Y的距离，当手指移动超过这个距离时，手指离开屏幕才会触发事件。
+</code></pre>
+
+<h4>
+<a id="user-content-data-1" class="anchor" href="#data-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>data</h4>
+
+<pre><code>类型：Object
+
+moveX/Y：从手指按下到抬起的这一段距离
+</code></pre>
 </body>
 </html>
