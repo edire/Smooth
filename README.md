@@ -1,6 +1,6 @@
-# Smooth，javascript touch插件
+# Smooth.js，javascript touch插件
 
-插件封装了两个方法，实时滑动事件，和滑动后离开事件
+插件封装了两个方法，实时滑动事件，和滑动后离开事件	
 
 ## 实时滑动事件
 
