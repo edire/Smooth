@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta charset="UTF-8">
+	<title>Smooth</title>
+	<style>
+		.dot {
+			width: 30px;
+			height: 30px;
+			background: #ccc;
+			position: absolute;
+			left: 33px;
+			top: 33px;
+		}
+	</style>
+</head>
+<body>
+	<div class="dot">
+	</div>
+
+
+	<div class="c">
+	</div>
+	<script src="Smooth.js"></script>
+	<script>
+
+var dom = document.querySelector('.dot');
+	dom.style.left = dom.offsetLeft + 'px';
+	dom.style.top = dom.offsetTop + 'px';
+
+Smooth('.dot').move(function(data,e){
+	dom.style.left = parseFloat(dom.style.left) + data.changeX + 'px';
+	dom.style.top = parseFloat(dom.style.top) + data.changeY + 'px';
+},function(e){
+});
+Smooth('.dot').slide(function(data,e){
+
+},20,20);
+
+
+
+	</script>
+
+</body>
+</html>
