@@ -33,13 +33,13 @@ Smooth(element).slide(function(data,event){
 
 },xMove,yMove);
 
-  #### x/yMove
+  ####x/yMove
 
     类型：string
 
     移动的最小X/Y的距离，当手指移动超过这个距离时，手指离开屏幕才会触发事件。
 
-  #### data
+  ####data
 
   	类型：Object
 
