@@ -6,14 +6,14 @@
 
 	Smooth(element).move(function(data,event){
 
-	   //todo
+	   //当手指滑动时做的事情
 
 	},function(event){
 
-	   //todo
+	   //当手指离开时做的事情
 
 	});
-
+	
 ####data 
 
   类型：Object
