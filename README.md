@@ -4,15 +4,15 @@
 
 ## 实时滑动事件
 
-Smooth(element).move(function(data,event){
+	Smooth(element).move(function(data,event){
 
-   //todo
+	   //todo
 
-},function(event){
+	},function(event){
 
-   //todo
+	   //todo
 
-});
+	});
 
 ####data 
 
@@ -27,11 +27,11 @@ Smooth(element).move(function(data,event){
 
 ## 手指离开时事件
 
-Smooth(element).slide(function(data,event){
+	Smooth(element).slide(function(data,event){
 
-   //todo
+	   //todo
 
-},xMove,yMove);
+	},xMove,yMove);
 
 ####x/yMove
 
