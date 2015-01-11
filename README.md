@@ -13,7 +13,7 @@
 	   //当手指离开时做的事情
 
 	});
-	
+
 ####data 
 
   类型：Object
@@ -22,7 +22,9 @@
 
     moveX/Y：从手指按下到当前一次动作滑动的X/Y。changeX/Y：每次触发move事件，X/Y的变化值
 
-	event：当前事件的event，返回原生的event对象。
+####event：
+	
+	当前事件的event，返回原生的event对象。
 
 
 ## 手指离开时事件
@@ -45,3 +47,6 @@
 
   	moveX/Y：从手指按下到抬起的这一段距离
 
+####event
+
+	当前事件的event，返回原生的event对象。
