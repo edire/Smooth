@@ -41,7 +41,6 @@ var bindEvent = function () {
 	})
 }
 
-
 var init = function () {
 	initImgSelect();
 	bindEvent();
