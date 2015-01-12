@@ -21,6 +21,7 @@
 
 
 	<div class="c">
+		将div x y 移动100像素才符合slide事件
 	</div>
 	<script src="Smooth.js"></script>
 	<script>
@@ -35,8 +36,8 @@ Smooth('.dot').move(function(data,e){
 },function(e){
 });
 Smooth('.dot').slide(function(data,e){
-
-},20,20);
+	document.querySelector('.c').innerHTML = "移动距离符合slide事件";
+},100,100);
 
 
 
