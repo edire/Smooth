@@ -10,37 +10,18 @@
 			height: 30px;
 			background: #ccc;
 			position: absolute;
-			left: 33px;
-			top: 33px;
 		}
 	</style>
 </head>
 <body>
-	<div class="dot">
-	</div>
-
-
-	<div class="c">
-		将div 向右移动50px以上 向下移动100px以上才符合slide事件的条件
+	<div class="dot" style="-webkit-transform:translate3d(33px,33px,0px);">
 	</div>
 	<script src="Smooth.js"></script>
 	<script>
-
-var dom = document.querySelector('.dot');
-	dom.style.left = dom.offsetLeft + 'px';
-	dom.style.top = dom.offsetTop + 'px';
-
-Smooth('.dot').move(function(data,e){
-	dom.style.left = parseFloat(dom.style.left) + data.changeX + 'px';
-	dom.style.top = parseFloat(dom.style.top) + data.changeY + 'px';
-},function(e){
-});
-Smooth('.dot').slide(function(data,e){
-	document.querySelector('.c').innerHTML = "移动距离符合slide事件";
-},40,100);
-
-
-
+		var dom = document.querySelector('.dot');
+		Smooth('.dot').move(function(data,e){
+			dom.style.webkitTransform = 'translate3d(' + data.resultX + 'px,'+data.resultY+'px,0)';
+		});
 	</script>
 
 </body>
