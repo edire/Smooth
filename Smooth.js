@@ -19,62 +19,59 @@ function Smooth(element){
 		moveY,
 		startX,
 		startY,
-		currentX,
-		currentY,
 		lastX,
 		lastY,
 		changeX,
 		changeY,
-		moving = false,
-		firstMove = true;
+		currentX,
+		currentY,
+		moving = false;
 
-		var X = 0,Y=0;
+
+			_this.dom.addEventListener('touchstart', function (e) {
+				startX = e.changedTouches[0].clientX;
+				startY = e.changedTouches[0].clientY;
+				lastX = e.changedTouches[0].clientX;
+				lastY = e.changedTouches[0].clientY;
+			});
 
 			_this.dom.addEventListener('touchmove', function (e) {
 				e.stopPropagation();
 				e.preventDefault();
-					moving = true;
-					if (firstMove) {
-						startX = e.changedTouches[0].clientX;
-						startY = e.changedTouches[0].clientY;
-						firstMove = false;
-						lastX = e.changedTouches[0].clientX;
-						lastY = e.changedTouches[0].clientY;	
-					} else {
 
-						currentX = e.changedTouches[0].clientX;
-						currentY = e.changedTouches[0].clientY;
-
-						changeX = currentX - lastX;
-						changeY = currentY - lastY;
-
-						moveX = e.changedTouches[0].clientX - startX;
-						moveY = e.changedTouches[0].clientY - startY;
+				moving = true;
 
 
-						var data = {
-							moveX: moveX,
-							moveY: moveY,
-							changeX: changeX,
-							changeY: changeY
-						}
+				currentX = e.changedTouches[0].clientX;
+				currentY = e.changedTouches[0].clientY;
 
-						if(func instanceof Function) {
-							func(data,e);
-						}
+				changeX = currentX - lastX;
+				changeY = currentY - lastY;
+
+				moveX = e.changedTouches[0].clientX - startX;
+				moveY = e.changedTouches[0].clientY - startY;
 
 
-						lastX = e.changedTouches[0].clientX;
-						lastY = e.changedTouches[0].clientY;	
-					}
+				var data = {
+					moveX: moveX,
+					moveY: moveY,
+					changeX: changeX,
+					changeY: changeY
+				}
+
+				if(func instanceof Function) {
+					func(data,e);
+				}
+
+				lastX = e.changedTouches[0].clientX;
+				lastY = e.changedTouches[0].clientY;
 
 			}, false);
 
-			_this.dom.addEventListener('touchend', function (e) {
-				if (moving === false) return;
-				firstMove = true;
+			_this.dom.addEventListener('touchend', function (data, e) {
+				if ( moving === false ) return;
 				if(callback instanceof Function){
-					callback(e);	
+					callback(data,e);	
 				}
 				moving = false;
 			}, false);
@@ -119,6 +116,7 @@ function Smooth(element){
 			}
 		}, false);
 	};
+
 
 
 	var dom = document.querySelector(element);
