@@ -25,6 +25,7 @@ function Smooth(element){
 		changeY,
 		currentX,
 		currentY,
+		data = {},
 		moving = false;
 
 
@@ -52,7 +53,7 @@ function Smooth(element){
 				moveY = e.changedTouches[0].clientY - startY;
 
 
-				var data = {
+				data = {
 					moveX: moveX,
 					moveY: moveY,
 					changeX: changeX,
@@ -68,7 +69,7 @@ function Smooth(element){
 
 			}, false);
 
-			_this.dom.addEventListener('touchend', function (data, e) {
+			_this.dom.addEventListener('touchend', function ( e) {
 				if ( moving === false ) return;
 				if(callback instanceof Function){
 					callback(data,e);	

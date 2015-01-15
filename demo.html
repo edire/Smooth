@@ -33,10 +33,14 @@ var dom = document.querySelector('.dot');
 Smooth('.dot').move(function(data,e){
 	dom.style.left = parseFloat(dom.style.left) + data.changeX + 'px';
 	dom.style.top = parseFloat(dom.style.top) + data.changeY + 'px';
-},function(e){
+},function(data, e){
+	if(data.moveX > 40 && data.moveY > 100) {
+	 	document.querySelector('.c').innerHTML = "1、这一条是判断来的<br>";
+	}
 });
+
 Smooth('.dot').slide(function(data,e){
-	document.querySelector('.c').innerHTML = "移动距离符合slide事件";
+	document.querySelector('.c').innerHTML += "2、这个是 slide 的效果";
 },40,100);
 
 
