@@ -1,5 +1,4 @@
 "use strict"
-
 function Smooth(element){
 
 	function _Smooth(dom) {
